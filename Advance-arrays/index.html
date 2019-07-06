@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript Arrays</title>
+
+  <style>
+    section{
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin: 0px auto;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  
+   <h1>Array</h1>
+  
+
+   <section>
+      const array = [ 1, 2, 10 , 16];
+   </section>
+  <br /><hr />
+
+  <section>
+    <p id="array"></p>
+    <h1>ForEach method</h1>
+    const double = [];<br />
+
+    const newArray = array.forEach((num)=>{<br />
+     double.push(num * 2);<br />
+    })<br />
+
+    <p>
+      Result: <span id="double"></span>
+    </p>
+  </section>
+
+
+  <section>
+    <p id="array"></p>
+    <h1>Map Method</h1>
+
+    mapArrayDouble = array.map((item)=>{<br />
+      return item * 2<br />
+    })<br />
+
+    <p>
+        Result: <span id="mapArrayDouble"></span>
+    </p>
+
+  </section>
+
+
+  <section>
+    <p id="array"></p>
+    <h1>Array Filter</h1>
+    const filterArray = array.filter(num => {<br />
+      return num !== 2 && num !== 10;<br />
+    })<br />
+    <p>Result: <span id="filterArray"></span></p>
+  </section>
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

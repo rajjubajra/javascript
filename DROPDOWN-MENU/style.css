@@ -1,0 +1,39 @@
+ul.main{
+  display: block;
+}
+
+
+a{
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+li{
+  list-style: none;
+  display: inline-block;
+  background-color: beige;
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+
+li ul{
+  display: none;
+}
+
+li.show ul{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  margin-left: -2.5em;
+  margin-top: 1em;
+}
+
+li.show ul li{
+  margin: 0.7em 0em;
+}
+
+
+

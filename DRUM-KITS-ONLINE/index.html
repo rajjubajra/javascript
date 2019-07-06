@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Guitar Tunner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>On-line Drum Kit</h3>
+    <p class='sub-title'>Using Keyboard</p>
+    <ul>
+      <li data-key="65" class="key"  >A:<span>Boom</span></li>
+      <li data-key="83" class="key"  >S:<span>Clap</span></li>
+      <li data-key="68" class="key"  >D:<span>Hithat</span></li>
+      <li data-key="70" class="key"  >F:<span>Kick</span></li>
+      <li data-key="71" class="key"  >G:<span>Ride</span></li>
+      <li data-key="72" class="key"  >H:<span>Openhat</span></li>
+      <li data-key="74" class="key"  >J:<span>Snare</span></li>
+      <li data-key="75" class="key"  >K:<span>Tink</span></li>
+      <li data-key="76" class="key"  >L:<span>Tom</span></li>
+    </ul>
+  </div>
+
+  <audio data-key="65" src="sound/boom.wav"></audio>
+  <audio data-key="83" src="sound/clap.wav"></audio>
+  <audio data-key="68" src="sound/hihat.wav"></audio>
+  <audio data-key="70" src="sound/kick.wav"></audio>
+  <audio data-key="71" src="sound/ride.wav"></audio>
+  <audio data-key="72" src="sound/openhat.wav"></audio>
+  <audio data-key="74" src="sound/snare.wav"></audio>
+  <audio data-key="75" src="sound/tink.wav"></audio>
+  <audio data-key="76" src="sound/tom.wav"></audio>
+
+
+
+  <script>
+
+    //play drum on 'keydown'
+    function playDrum(e){
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if(!audio) return; //stop runing function from running
+        audio.currentTime = 0; //rewind to the start
+        audio.play();
+        key.classList.add("playing");
+        console.log('Key: ', key);
+    }
+    window.addEventListener('keydown', playDrum);
+
+    //remove style on 'transitionend'
+    function removePlayingStyle(e){
+      if(e.propertyName !== 'transform') return;//skip if not transform
+      this.classList.remove('playing');
+      console.log('this: ',this);
+    }
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(keys => keys.addEventListener('transitionend', removePlayingStyle ));
+
+  </script>
+</body>
+</html>

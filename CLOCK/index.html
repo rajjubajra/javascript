@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="clock">
+      <div class="clock-circle">
+          <div class="seconds"></div>
+          <div class="minute"><span class="minute-hand"></span></div>
+          <div class="hour"><span class="hour-hand"></span></div>
+        </div>
+    </div>
+  </div>
+ 
+  <script>
+    const seconds = document.querySelector('.seconds');
+    const minute = document.querySelector('.minute');
+    const hour = document.querySelector('.hour');
+    
+    
+    setClock = () => {
+      const time = new Date();
+
+      let secondsHand = time.getSeconds();
+      let secondsDeg = ((secondsHand / 60) * 360) + 90;
+      seconds.style.transform = `rotate(${secondsDeg}deg)`;
+      
+      let minuteHand = time.getMinutes();
+      let minuteDeg = ((minuteHand / 60) * 360) + 90;
+      minute.style.transform = `rotate(${minuteDeg}deg)`;
+
+      let hourHand = time.getHours();
+      let hourDeg = ((hourHand / 12) * 360) + 90;
+      hour.style.transform = `rotate(${hourDeg}deg)`;
+      console.log(hourHand, hourDeg);
+    }
+
+    setInterval(setClock, 1000);
+
+
+    
+    
+  </script>
+</body>
+</html>

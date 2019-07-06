@@ -1,0 +1,42 @@
+.container{
+  width: 100%;
+  max-width: 500px;
+  margin: 0px auto;
+}
+
+.row form{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  padding: 10px 5px;
+  font-size: 1rem;
+  margin: 10px 0px;
+  border: 0px;
+  border-bottom: 0.1rem solid #ccc;
+}
+
+
+button{
+  width: 200px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background: wheat;
+  cursor: pointer;
+}
+
+li.list-item{
+  width: 100%;
+  list-style: initial;
+  height: 30px;
+}
+
+a.delete-item{
+  display: block;
+  float: right;
+  cursor: pointer;
+  padding: 5px 10px;
+  background: wheat;
+  border-radius: 50px;
+}
